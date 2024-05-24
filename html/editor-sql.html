@@ -9,16 +9,17 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/hint/show-hint.min.css">
       <style>
          #editor {
-			height: 200px;
+         height: 200px;
+         }
+         #results {
+         margin-top: 20px;
          }
       </style>
    </head>
-   
    <body>
       <h1>SQL Editor</h1>
       <textarea id="editor"></textarea>
    </body>
-   
    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/sql/sql.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/hint/show-hint.min.js"></script>
@@ -36,12 +37,13 @@
       		}
       	}
       });
-      
+          
       editor.on("keyup", function (cm, event) {
-             if (!cm.state.completionActive && 
-                 event.keyCode != 13) {
-                 CodeMirror.commands.autocomplete(cm, null, {completeSingle: false});
-             }
-         }); 
+      	 if (!cm.state.completionActive && 
+      		 event.keyCode != 13) {
+      		 CodeMirror.commands.autocomplete(cm, null, {completeSingle: false});
+      	 }
+       }); 
+       
    </script>
 </html>
